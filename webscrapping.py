@@ -244,7 +244,7 @@ def scrape_topics_repos():
     os.makedirs('data',exist_ok=True)
     for index,row in topics_df.iterrows():
         print('Scrapping top repositories for "{}" '.format(row['title']))
-        scrape_topic(row['url'],'data/{}.csv'.format(row['title']))
+        scrape_topic(row['url'],row['title'])
 for index,row in topics_df.iterrows():
     print(row['title'],row['description'])
 scrape_topics_repos()
